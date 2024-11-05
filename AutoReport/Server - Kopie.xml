@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+ <Serververzeichnis>
+	<Server>
+		<Adresse>localhost:876/Login</Adresse>
+		<Aufgabe>
+			<Reporttyp>Backprogramm</Reporttyp>
+			<Zyklus>woechentlich</Zyklus>
+			<Startdatum>01.06.2024</Startdatum>
+			<Ausgabeziel>file4you</Ausgabeziel>
+			</Aufgabe>
+	</Server>
+	<Server>
+		<Adresse>localhost:864/Login</Adresse>
+		<Aufgabe>
+			<Reporttyp>Reinigungsprogramm</Reporttyp>
+			<Zyklus>monatlich</Zyklus>
+			<Startdatum>01.06.2024</Startdatum>
+			<Ausgabeziel>file4you</Ausgabeziel>
+			</Aufgabe>
+	</Server>
+</Serververzeichnis>

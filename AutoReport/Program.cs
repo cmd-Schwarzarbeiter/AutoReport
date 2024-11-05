@@ -1,3 +1,4 @@
+
 namespace AutoReport
 {
     internal static class Program
