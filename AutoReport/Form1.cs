@@ -16,7 +16,7 @@ namespace AutoReport
         private ServerCollection serverCollection;
         private Programmverzeichnis programmverzeichnis;
 
-        //Listen von Auswahlmöglichkeiten
+        //Listen von Auswahlmï¿½glichkeiten
         string[] Programmtypen = {"Backprogramm", "Reinigungsprogramm", "Verbindungstest"};
         string[] Zyklentypen = {"taeglich", "woechentlich", "14taegig", "monatlich", "jaehrlich"};
         string[] ExchangeServer = { "file4you", "Wiesheu_ftp", "Aldi_Secure" };
@@ -224,7 +224,7 @@ namespace AutoReport
 
             void Form3btn1_Click(object sender, EventArgs e)
             {
-                //Programmname zu Liste und Form2combobox hinzufügen
+                //Programmname zu Liste und Form2combobox hinzufï¿½gen
                 if (!string.IsNullOrEmpty(Form3tbx.Text))
                 {
                     //Form2comboBox.Items.Add(Form3tbn.Text);
@@ -241,7 +241,7 @@ namespace AutoReport
                     try
                     {
                         var serializer = new XmlSerializer(typeof(Server));
-                        using (var writer = new StreamWriter("Server_2.xml"))
+                        using (var writer = new StreamWriter("Programmverzeichnis.xml"))
                         {
                             serializer.Serialize(writer, server);
                         }
@@ -279,7 +279,7 @@ namespace AutoReport
 
             ComboBox Form2comboBox = new ComboBox();
             Form2comboBox.Size = new Size(116, 23);
-            //Form2comboBox füllen
+            //Form2comboBox fï¿½llen
             Form2comboBox.Location = new Point(5, 50);
             Form2.Controls.Add(Form2comboBox);
 
@@ -342,10 +342,10 @@ namespace AutoReport
             }
             */
 
-            //fuer jeden Eintrag in "Server" eine Combobox gefüllt mit dropboxen erstellen und dropboxen setzen
+            //fuer jeden Eintrag in "Server" eine Combobox gefï¿½llt mit dropboxen erstellen und dropboxen setzen
             foreach (var server in serverCollection.Servers)
             {
-                diesen gesamten Block ich eine Funktion überführen!!!!
+                ///////////diesen gesamten Block ich eine Funktion Ueberfuehren!!!!------------------------------------------------------------------------------------------------------------
                 GroupBox programmGroupBox = new GroupBox();
                 programmGroupBox.Text = server.Adresse;
                 programmGroupBox.Size = new Size(740, 60);
@@ -382,7 +382,7 @@ namespace AutoReport
                 cbx_Rep_Typ.Location = new Point(165, 20);
                 cbx_Rep_Typ.Name = "comboBox_Rep_Typ";
                 cbx_Rep_Typ.Size = new Size(116, 23);
-                //Programmtypen hinzufügen
+                //Programmtypen hinzufï¿½gen
                 cbx_Rep_Typ.Items.AddRange(Programmtypen);
                 cbx_Rep_Typ.SelectedItem = server.Reporttyp.ToString();
                 //Programm aus xml vorauswaehlen
@@ -475,7 +475,7 @@ namespace AutoReport
         }
         private void add_server(object sender, EventArgs e)
         {
-            den gesamten Block hier einfügen???
+            //den gesamten Block hier einfuegen???---------------------------------------------------------------------
         }
     }
 
@@ -494,7 +494,7 @@ namespace AutoReport
         public string Ausgabeziel { get; set; }
     }
 
-    // Container-Klasse für die Liste von Programm-Objekten
+    // Container-Klasse fuer die Liste von Programm-Objekten
     [XmlRoot("ServerCollection")]
     public class ServerCollection
     {
