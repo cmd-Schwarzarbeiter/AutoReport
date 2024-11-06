@@ -1,7 +1,7 @@
 using OpenQA.Selenium.DevTools.V129.Page;
 using System;
 using System.Data;
-using System.IO;
+//using System.IO;
 using System.Xml.Serialization;
 using static AutoReport.Form1;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -16,7 +16,7 @@ namespace AutoReport
         private ServerCollection serverCollection;
         private Programmverzeichnis programmverzeichnis;
 
-        //Listen von Auswahlm�glichkeiten
+        //Listen von Auswahlmoeglichkeiten
         string[] Programmtypen = {"Backprogramm", "Reinigungsprogramm", "Verbindungstest"};
         string[] Zyklentypen = {"taeglich", "woechentlich", "14taegig", "monatlich", "jaehrlich"};
         string[] ExchangeServer = { "file4you", "Wiesheu_ftp", "Aldi_Secure" };
@@ -31,7 +31,7 @@ namespace AutoReport
             // Aus der XML-Datei lesen
             try
             {
-                serverCollection = DeserializeServerFromXml(ServerPath);
+                serverCollection = XmlHelper.DeserializeServerFromXml(ServerPath);
             }
             catch (Exception ex)
             {
@@ -40,7 +40,7 @@ namespace AutoReport
 
             try
             {
-                programmverzeichnis = DeserializeProgrammFromXml(ProgramPath);
+                programmverzeichnis = XmlHelper.DeserializeProgrammFromXml(ProgramPath);
             }
             catch (Exception ex)
             {
@@ -125,7 +125,7 @@ namespace AutoReport
             
         }
 
-
+        /*
         // Methode zum Server Deserialisieren
         public static ServerCollection DeserializeServerFromXml(string ServerPath)
         {
@@ -168,6 +168,7 @@ namespace AutoReport
             }
             MessageBox.Show($"Server wurden in '{ProgramPath}' gespeichert.");
         }
+        */
         
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -240,6 +241,16 @@ namespace AutoReport
 
                     try
                     {
+                        XmlHelper.SerializeProgrammToXml(ProgramPath, programmverzeichnis);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error during XML Serialization: {ex.Message}");
+                    }
+
+                    /*
+                    try
+                    {
                         var serializer = new XmlSerializer(typeof(Server));
                         using (var writer = new StreamWriter("Programmverzeichnis.xml"))
                         {
@@ -250,6 +261,11 @@ namespace AutoReport
                     {
                         MessageBox.Show($"Exception occur during XML Serialization :{ex.Message}");
                     }
+                    */
+                    
+                    
+                        
+                    
                 }
                 Form3.Close();
             }
