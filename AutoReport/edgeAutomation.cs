@@ -8,6 +8,8 @@ using System.Xml.Linq;
 
 //Infos: https://www.toolsqa.com/selenium-c-sharp/
 
+
+/*
 IWebDriver EdgeDriver = new EdgeDriver();
 
 EdgeDriver.Url = "https://de.wikipedia.org";
@@ -21,6 +23,14 @@ EdgeDriver.FindElement(By.Name("search")).SendKeys("Bitcoin" + OpenQA.Selenium.K
 Thread.Sleep(1000);
 //EdgeDriver.FindElement(By.XPath("//*[@id=\"rso\"]/div[1]/div/div/div/div/div/div/div/div[1]/div/span/a/h3")).Click();
 Thread.Sleep(1000);
+*/
+
+
+
+
+
+
+
 
 /*
 (By.Id("submit")
