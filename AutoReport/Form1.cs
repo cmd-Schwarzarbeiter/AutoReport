@@ -489,10 +489,6 @@ namespace AutoReport
             }
             */
         }
-        private void add_server(object sender, EventArgs e)
-        {
-            //den gesamten Block hier einfuegen???---------------------------------------------------------------------
-        }
     }
 
     [XmlRoot("Server")]
